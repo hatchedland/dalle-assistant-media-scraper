@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { firefox } = require("playwright");
 
 (async () => {
