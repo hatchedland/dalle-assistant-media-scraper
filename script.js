@@ -1,5 +1,7 @@
 const { firefox } = require("playwright");
 
+const PROMPT = "Generate an image of a cat";
+
 (async () => {
   const browser = await firefox.launchPersistentContext("./data", {
     headless: false,
@@ -10,7 +12,7 @@ const { firefox } = require("playwright");
 
   await page.waitForSelector("textarea#prompt-textarea");
   await page.focus("textarea#prompt-textarea");
-  await page.keyboard.type("generate an image of a cat");
+  await page.keyboard.type(PROMPT);
   await page.click('button[data-testid="send-button"]');
 
   //   loader
