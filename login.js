@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { firefox } = require("playwright");
 
 (async () => {
@@ -13,11 +14,11 @@ const { firefox } = require("playwright");
   await page.click("nav button.btn-neutral");
   await page.waitForSelector("input.email-input");
 
-  await page.fill("input.email-input", "your@email.com");
+  await page.fill("input.email-input", process.env.EMAIL);
   await page.click("button.continue-btn");
  
   await page.waitForSelector("input#password");
-  await page.fill("input#password", "***your-password***");
+  await page.fill("input#password", process.env.PASSWORD);
 
   // Click on the login button
   await page.click("button._button-login-password");
