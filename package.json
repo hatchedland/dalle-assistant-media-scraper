@@ -1,0 +1,22 @@
+{
+  "name": "dalle-assistant-media-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hatchedland/dalle-assistant-media-scraper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hatchedland/dalle-assistant-media-scraper/issues"
+  },
+  "homepage": "https://github.com/hatchedland/dalle-assistant-media-scraper#readme",
+  "dependencies": {
+    "playwright": "^1.43.0"
+  }
+}
