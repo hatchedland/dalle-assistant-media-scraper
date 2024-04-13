@@ -5,6 +5,7 @@ const PROMPT = "Generate an image of a cat";
 (async () => {
   const browser = await firefox.launchPersistentContext("./data", {
     headless: false,
+    downloadsPath: './downloads'
   });
   const page = await browser.newPage();
 
@@ -40,6 +41,16 @@ const PROMPT = "Generate an image of a cat";
 
   console.log("Text content:", textResponse);
   console.log("Image URLs:", imageSrcs);
+
+  const imageUrl = imageSrcs[0]
+
+  const [download] = await Promise.all([
+    page.waitForEvent('download'),
+    page.goto(imageUrl) 
+  ]);
+
+  // Save the download
+  const path = await download.path();
 
   await browser.close();
 })();
